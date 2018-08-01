@@ -1,6 +1,9 @@
 package com.abin.lee.origin.service.team.impl;
 
 import com.abin.lee.origin.service.team.TeamService;
+import com.alibaba.dubbo.rpc.RpcContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 /**
@@ -10,9 +13,13 @@ import org.springframework.stereotype.Service;
  */
 @Service(value = "teamService")
 public class TeamServiceImpl implements TeamService {
+    private static final Logger logger = LoggerFactory.getLogger(TeamServiceImpl.class);
 
     @Override
     public String get(String param) {
+        String traceId = RpcContext.getContext().getAttachment("traceId");
+        logger.info(" got a argument param : " + param + ", traceId=..." + traceId);
+
         return "hello "+param;
     }
 }

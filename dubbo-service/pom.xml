@@ -10,25 +10,39 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>dubbo-service</artifactId>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
-
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <artifactId>dubbo-common</artifactId>
-                <groupId>com.abin.lee</groupId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <dependencies>
+
         <dependency>
-            <artifactId>dubbo-common</artifactId>
+            <artifactId>dubbo-api</artifactId>
             <groupId>com.abin.lee</groupId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
+
+
+
     </dependencies>
+
+
+
+    <build>
+        <!--<filters>-->
+        <!--<filter>${basedir}/src/main/profiles/${env}/${env}.properties</filter>-->
+        <!--<filter>${basedir}/src/main/profiles/${env}/*.xml</filter>-->
+        <!--</filters>-->
+        <resources>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+            <!--<resource>-->
+                <!--<directory>${basedir}/src/main/profiles/${env}</directory>-->
+                <!--<filtering>true</filtering>-->
+            <!--</resource>-->
+        </resources>
+    </build>
+
 
 </project>

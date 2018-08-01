@@ -9,16 +9,17 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>dubbo-client</artifactId>
-    <packaging>jar</packaging>
+    <artifactId>dubbo-api</artifactId>
 
 
     <dependencies>
         <dependency>
-            <artifactId>dubbo-api</artifactId>
+            <artifactId>dubbo-common</artifactId>
             <groupId>com.abin.lee</groupId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
+
+
 
 </project>
