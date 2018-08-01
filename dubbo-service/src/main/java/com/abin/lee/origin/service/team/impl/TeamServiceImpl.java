@@ -4,6 +4,7 @@ import com.abin.lee.origin.service.team.TeamService;
 import com.alibaba.dubbo.rpc.RpcContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.stereotype.Service;
 
 /**
@@ -18,8 +19,9 @@ public class TeamServiceImpl implements TeamService {
     @Override
     public String get(String param) {
         String traceId = RpcContext.getContext().getAttachment("traceId");
+        MDC.put("HAPPY_ID", "mut--1-" + traceId + "--mut");
         logger.info(" got a argument param : " + param + ", traceId=..." + traceId);
 
-        return "hello "+param;
+        return "hello " + param;
     }
 }

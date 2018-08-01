@@ -1,7 +1,7 @@
 package com.abin.lee.origin.service.team.filter;
 
 import com.alibaba.dubbo.rpc.*;
-import org.apache.log4j.MDC;
+import org.slf4j.MDC;
 
 /**
  *
@@ -14,4 +14,6 @@ public class RpcTraceSkeletonFilter implements Filter {
         System.out.println("RpcTraceSkeletonFilter---traceId=" + traceId);
         return invoker.invoke(invocation);
     }
+
+
 }

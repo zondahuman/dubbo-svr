@@ -19,7 +19,7 @@
   />
     -->
     <!-- 生成远程服务代理，可以和本地bean一样使用 -->
-    <dubbo:consumer timeout="30000"></dubbo:consumer>
+    <dubbo:consumer timeout="30000" filter="traceFilter"  />
 
     <dubbo:reference
             id="teamService"
