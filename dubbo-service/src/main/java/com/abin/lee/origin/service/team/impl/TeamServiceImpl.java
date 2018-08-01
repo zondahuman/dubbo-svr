@@ -19,8 +19,8 @@ public class TeamServiceImpl implements TeamService {
     @Override
     public String get(String param) {
         String traceId = RpcContext.getContext().getAttachment("traceId");
-        MDC.put("HAPPY_ID", "mut--1-" + traceId + "--mut");
-        logger.info(" got a argument param : " + param + ", traceId=..." + traceId);
+        logger.info("TeamServiceImpl-----------traceId: " + traceId );
+        logger.info(" got a argument param : " + param );
 
         return "hello " + param;
     }
